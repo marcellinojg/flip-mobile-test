@@ -1,25 +1,18 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
 
 import { Platform } from 'react-native';
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
-
 export const baseColors = {
   brand: {
-    50: "#E6F0FF",
-    100: "#CCE0FF",
-    200: "#99C2FF",
-    300: "#66A3FF",
-    400: "#3385FF",
-    500: "#0066FF", // Primary Brand
-    600: "#0052CC",
-    700: "#003D99",
-    800: "#002966",
-    900: "#001433",
+    40: "#FFF4EE",
+    100: "#FFE1D5",
+    200: "#FFBAA5",
+    300: "#FF936D",
+    400: "#FF764B",
+    500: "#FD6542", // Primary Brand (token: brand.500)
+    600: "#D24E2E",
+    700: "#A53B22",
+    800: "#7A2717",
+    900: "#511207",
   },
   blue: {
     50: "#F2F7FF",
@@ -102,9 +95,10 @@ export const semanticColors = {
   "text-error": baseColors.error[500],
 
   // BACKGROUND
-  "background-primary": baseColors.neutral[0],
-  "background-secondary": baseColors.neutral[50],
+  "background-primary": baseColors.neutral[100],
+  "background-secondary": baseColors.neutral[200],
   "background-brand": baseColors.brand[500],
+  "background-component": baseColors.neutral[50],
 
   // BUTTON
   "button-primary-background": baseColors.brand[500],
@@ -119,12 +113,24 @@ export const semanticColors = {
   "border-default": baseColors.neutral[200],
   "border-strong": baseColors.neutral[400],
   "border-brand": baseColors.brand[500],
+  "border-success": baseColors.success[500],
+  "border-warning": baseColors.warning[500],
+  "border-error": baseColors.error[500],
+  "border-info": baseColors.info[500],
 
   // STATUS
   "status-success": baseColors.success[500],
   "status-warning": baseColors.warning[500],
   "status-error": baseColors.error[500],
   "status-info": baseColors.info[500],
+
+  // ICON
+  "icon-brand": baseColors.brand[500],
+  "icon-success": baseColors.success[500],
+  "icon-warning": baseColors.warning[500],
+  "icon-error": baseColors.error[500],
+  "icon-info": baseColors.info[500],
+
 };
 
 export const Fonts = Platform.select({

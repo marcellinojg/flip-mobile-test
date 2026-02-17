@@ -1,11 +1,12 @@
 
 
 export const typography = {
+    // Lato from @expo-google-fonts/lato only has 400 and 700; medium/semibold use closest weight
     fontFamily: {
-        regular: "Inter_400Regular",
-        medium: "Inter_500Medium",
-        semibold: "Inter_600SemiBold",
-        bold: "Inter_700Bold",
+        regular: "Lato_400Regular",
+        medium: "Lato_400Regular",
+        semibold: "Lato_700Bold",
+        bold: "Lato_700Bold",
     },
 
     fontSize: {
