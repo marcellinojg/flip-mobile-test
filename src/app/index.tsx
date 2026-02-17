@@ -1,21 +1,5 @@
-import { ScrollView, StyleSheet } from 'react-native';
+import { TransactionListScreen } from "@/modules/transactions/screens/transaction-list";
 
-import { ThemedText } from '@/src/components/themed-text';
-import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
-
-export default function HomeScreen() {
-  const insets = useSafeAreaInsets();
-  return (
-    <SafeAreaView style={{ backgroundColor: 'red' }} edges={['top']}>
-      <ScrollView style={{ paddingBottom: insets.bottom }}>
-        <ThemedText>
-          Hello World
-        </ThemedText>
-      </ScrollView>
-    </SafeAreaView>
-  );
+export default function TransactionList() {
+  return <TransactionListScreen />;
 }
-
-const styles = StyleSheet.create({
-
-});
