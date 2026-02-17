@@ -10,7 +10,7 @@ import { showToastAlert } from "@/lib/alert";
 import { formatDate, formatRupiah } from "@/lib/formatter";
 import { Ionicons } from "@expo/vector-icons";
 import * as Clipboard from "expo-clipboard";
-import { useFocusEffect } from "expo-router";
+import { router, useFocusEffect } from "expo-router";
 import { useCallback, useMemo } from "react";
 import {
   ScrollView,
@@ -81,17 +81,27 @@ export const TransactionDetailScreen = ({
     >
       <Card style={styles.card}>
         {/* ID + Copy */}
-        <TouchableOpacity onPress={handleCopyId} style={[styles.sectionRow, styles.idRow]}>
-          <ThemedText
-            variant="defaultSemiBold"
-            style={styles.idLabel}
-          >{`ID TRANSAKSI: #${transaction.id}`}</ThemedText>
-          <Ionicons
-            name="copy-outline"
-            size={typography.fontSize.lg}
-            color={semanticColors["icon-brand"]}
-          />
-        </TouchableOpacity>
+        <ThemedView style={[styles.sectionRow, styles.idRow]}>
+          <TouchableOpacity hitSlop={spacing.medium} onPress={() => router.back()}>
+            <Ionicons
+              name="arrow-back-outline"
+              size={typography.fontSize.lg}
+              color={semanticColors["icon-brand"]}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={handleCopyId} style={styles.idContainer}>
+            <ThemedText
+              variant="defaultSemiBold"
+              style={styles.idLabel}
+            >{`ID TRANSAKSI: #${transaction.id}`}</ThemedText>
+            <Ionicons
+              name="copy-outline"
+              size={typography.fontSize.lg}
+              color={semanticColors["icon-brand"]}
+            />
+          </TouchableOpacity>
+        </ThemedView>
+
         <Divider />
         <ThemedView style={[styles.sectionRow, styles.headerRow]}>
           <ThemedText variant="defaultSemiBold">
@@ -204,5 +214,10 @@ const styles = StyleSheet.create({
   },
   contentRowItem: {
     flex: 1,
+  },
+  idContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.medium,
   }
 });
